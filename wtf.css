@@ -1,0 +1,296 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-container {
+    width: 100%;
+    height: 35px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    padding-top: 15px;
+    
+}
+
+#nav {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    
+    text-align: center;
+}
+
+#nav li {
+    color: #61532c;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+#nav li a {
+    color: #fce800;
+    opacity: 1;
+    font-family: Arial, Helvetica, sans-serif;
+
+    text-decoration: none;
+}
+#nav li a:hover {
+    color: #fff;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.vid-container {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    z-index: -100;
+    background-image: url('./wtf-img/wetheforce-home-background.jpg');
+    background-position: 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.video {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
+    animation: all 0.6s ease-in-out; 
+}
+
+
+.video.playing{
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+    pointer-events: all;
+    animation: all 0.6s ease-in-out; 
+
+
+
+}
+
+.contacto {
+    display: none;
+    position: relative;
+    opacity: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./wtf-img/wetheforce-contacto.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.contacto.active{
+    display: block;
+    opacity: 1;
+    z-index: 20;
+
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video, .anim {
+    width: 100%;
+    height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    .video, .anim {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.skip {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0.5;
+    z-index: 40;
+    cursor: pointer;
+}
+
+.skip.active {
+    display: block;
+}
+
+.skip:hover {
+    opacity: 1;
+}
+
+.back {
+    display: none;
+    z-index: 40;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.back.active {
+    display: block;
+}
+
+.footer {
+    background-image: url('wtf-img/wetheforce-home-footer.png');
+    width: 100%;
+    height: 234px;
+    background-color: rgba(0,0,0,0);
+    position: relative;
+    bottom: 0;
+    background-size: 100% 100%;
+    /* margin-top: calc(50% - 0px); */
+    margin-top: calc(100vh - 0px);
+    text-align: center;
+} 
+
+.anim {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+    
+
+}
+
+#video-mobile {
+    display: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video, .anim {
+    width: 100%;
+    height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    .video, .anim {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px) 
+   { 
+       .vid-container {
+           top: 0;
+       }
+       #video-mobile {
+           display: block;
+           position: relative;
+           top: 0;
+           left: 0;
+           width: auto;
+           height: 100%;
+
+       }
+       .nav-container {
+           position: fixed;
+           bottom: 0;
+           top: auto;
+           width: 100%;
+           height: 55px;
+           background-color: transparent;
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-position: 50% 0%;
+           background-image: url('./wtf-img/wetheforce-home-menu-background.png');
+           
+
+       }
+       .nav-container .nav-item {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 50px;
+        width: 50px;
+       }
+       .nav-container .nav-games {
+         background-image: url('./wtf-img/wetheforce-home-menu-games.png');
+       }
+       .nav-container .nav-industry {
+         background-image: url('./wtf-img/wetheforce-home-menu-industry.png');
+       }
+       .nav-container .nav-apps {
+         background-image: url('./wtf-img/wetheforce-home-menu-apps.png');
+       }
+       .nav-container .nav-watch {
+         background-image: url('./wtf-img/wetheforce-home-menu-joinus.png');
+       }
+       .nav-container .nav-home {
+         background-image: url('./wtf-img/wetheforce-home-menu-home.png');
+       }
+    
+}
