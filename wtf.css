@@ -224,6 +224,10 @@ table {
     display: none;
 }
 
+.sections {
+    display: none;
+}
+
 @media (min-aspect-ratio: 16/9) {
     .video, .anim {
     width: 100%;
@@ -241,6 +245,8 @@ table {
   and (min-device-width: 320px) 
   and (max-device-width: 812px) 
    { 
+       
+      
        .vid-container {
            top: 0;
        }
@@ -248,17 +254,24 @@ table {
            display: block;
            position: relative;
            top: 0;
-           left: 0;
+           left: 50%;
            width: auto;
            height: 100%;
+           transform: translateX(-50%);
 
        }
+       .video {
+           display: none;
+       }
+
        .nav-container {
+        z-index: 20;
+
            position: fixed;
            bottom: 0;
            top: auto;
            width: 100%;
-           height: 55px;
+           height: 50px;
            background-color: transparent;
            background-size: cover;
            background-repeat: no-repeat;
@@ -266,6 +279,15 @@ table {
            background-image: url('./wtf-img/wetheforce-home-menu-background.png');
            
 
+       }
+       
+       #nav li {
+           margin-left: 5px;
+           margin-right: 5px;
+       }
+
+       #nav li.nav-contacto {
+           display: none;
        }
        .nav-container .nav-item {
         background-position: 50% 50%;
@@ -276,7 +298,9 @@ table {
         overflow: hidden;
         height: 50px;
         width: 50px;
+        
        }
+       
        .nav-container .nav-games {
          background-image: url('./wtf-img/wetheforce-home-menu-games.png');
        }
@@ -288,9 +312,219 @@ table {
        }
        .nav-container .nav-watch {
          background-image: url('./wtf-img/wetheforce-home-menu-joinus.png');
+
+       }
+       #nav li.nav-watch a {
+           display: block;
+           width: 100%;
+           height: 100%;
+       }
+       .nav-containert .nav-watch a {
+           width: 100%;
+           height: 100%;
+           display: block;
        }
        .nav-container .nav-home {
          background-image: url('./wtf-img/wetheforce-home-menu-home.png');
        }
-    
+       .nav-container .nav-contacto {
+         /* background-image: url('./wtf-img/wetheforce-home-menu-home.png'); */
+         display: none;
+       }
+
+
+
+    .sections {
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+
+        position: relative;
+        z-index: 1;
+    }
+
+    .sections .section, .sections .section-bg {
+        display: block;
+        min-width: 100%;
+         min-height: 100%;
+         height: 100%;
+        position: relative;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+
+    }
+
+    .sections .section img {
+        position: relative;
+
+        width: 50%;
+        height: auto;
+    }
+    .sections .section.games {
+        margin-top: 100vh;
+        background-color: #000;
+    }
+    .sections .section.contact {
+        background-color: #000;
+    }
+    .sections .section .game-01 img.img1 {
+        transform: translate(10%, 60%)
+    }
+    .sections .section .game-01 img.img2 {
+     transform: translate(90%, -50%)
+
+    }
+    .sections .section .game-01 img.img3 {
+     transform: translate(20%, -130%);
+     width: 70%;
+
+    }
+    .sections .section .game-01 img.img4 {
+     transform: translate(50%, 0%);
+     padding-bottom: 50%;
+     /* width: 70%; */
+
+    }
+    .sections .section .game-02 img {
+     width: 100%;
+     height: auto;
+     /* width: 70%; */
+
+    }
+   
+
+    /* .sections .section-bg.game-01, .sections .section-bg.industry-01 {
+        background-image: url(./wtf-img/games/wetheforce-games-bg.jpg);
+    } */
+
+    .sections .section-bg.game-01 {
+        background-image: url(./wtf-img/games/wetheforce-games-bg.jpg);
+    }
+    .sections .section.industry {
+        background-image: url(./wtf-img/games/wetheforce-games-bg.jpg);
+background-position: 50% 50%;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+    }
+    .sections .section.apps {
+        background-image: url(./wtf-img/games/wetheforce-games-bg.jpg);
+background-position: 50% 50%;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+    }
+
+    .sections .section.industry img.img3 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+     padding-top: 35vh;
+     padding-bottom: 35vh;
+
+    }
+
+    .sections .section.apps img.img3 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+     padding-top: 35vh;
+     padding-bottom: 35vh;
+
+    }
+    .sections .section.industry img.img4 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+    width: 100%;
+    height: auto;
+
+    }
+    .sections .section.apps img.img4 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+    width: 100%;
+    height: auto;
+
+    }
+    .sections .section.contact img.img4 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+    width: 100%;
+    height: auto;
+
+    }
+
+    .sections .section.industry .section-bg {
+        text-align: center;
+    }
+    .sections .section.apps .section-bg {
+        text-align: center;
+    }
+
+    .sections .section.apps .apps-02 {
+        overflow: hidden;
+    }
+
+    .sections .section.apps img.img-left {
+        width: 100%;
+        height: auto;
+        transform: translate(-20%, 0%);
+    }
+    .sections .section.apps img.img-right {
+        width: 100%;
+        height: auto;
+        transform: translate(30%, -30%);
+    }
+    .sections .section .watchmore {
+        text-align: center;
+        color: #fce800;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+    .sections .section .description {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+    .sections .section .description span {
+        color: #fce800;
+    }
+    .sections .section a {
+        text-decoration: none;
+    }
+    .sections .section.apps img.img5 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+     padding-top: 15vh;
+     padding-bottom: 35vh;
+
+    }
+    .sections .section.apps img.img3 {
+     /* transform: translate(20%, -130%); */
+     /* width: 70%; */
+     width: 70%;
+     height: auto;
+     padding-top: 15vh;
+     padding-bottom: 35vh;
+
+    }
+
+    .footer {
+        background-color: #000;
+        background-image: url('./wtf-img/wetheforce-home-footer-mobile-bg.png');
+        margin-top: 0;
+        padding-bottom: 50px;
+        background-position: 100% 0%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
